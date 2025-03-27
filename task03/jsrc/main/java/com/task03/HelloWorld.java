@@ -26,10 +26,12 @@ public class HelloWorld implements RequestHandler<APIGatewayProxyRequestEvent, A
 
 		Map<String, String> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
+		
+		String responseBody = "{\"statusCode\": 200, \"message\": \"Hello from Lambda\"}";
 
 		response.setStatusCode(200);
 		response.setHeaders(headers);
-		response.setBody("{\"message\": \"Hello from Lambda!\"}");
+		response.setBody(responseBody);
 
 		return response;
 	}
